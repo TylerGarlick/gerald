@@ -1,0 +1,7 @@
+#!/usr/bin/env node
+const { handle } = require('@oclif/errors')
+const flush = require('@oclif/command/flush')
+
+require('@oclif/command').run()
+                         .then(flush)
+                         .catch(handle)

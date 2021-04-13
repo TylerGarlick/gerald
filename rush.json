@@ -1,0 +1,23 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/rush/v5/rush.schema.json",
+  "rushVersion": "5.40.3",
+  //  "npmVersion": "7.7.6",
+  "pnpmVersion": "5.18.9",
+  "projectFolderMinDepth": 1,
+  "projectFolderMaxDepth": 20,
+  "projects": [
+    {
+      "packageName": "@gerald/core",
+      "projectFolder": "packages/core",
+      "shouldPublish": true
+    },
+    {
+      "packageName": "@gerald/cli",
+      "projectFolder": "apps/gerald-cli",
+      "shouldPublish": true,
+      "cyclicDependencyProjects": [
+        "@gerald/core"
+      ]
+    }
+  ]
+}

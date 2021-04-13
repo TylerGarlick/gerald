@@ -1,0 +1,58 @@
+{
+  "name": "@gerald/cli",
+  "description": "Gerald CLI",
+  "version": "1.0.0",
+  "author": "TJ Garlick",
+  "bin": {
+    "gerald": "./bin/run"
+  },
+  "bugs": "https://github.com/TylerGarlick/gerald/issues",
+  "devDependencies": {
+    "@oclif/dev-cli": "^1.26.0",
+    "@tsconfig/node14": "^1.0.0",
+    "@types/node": "^10.17.56",
+    "globby": "^10.0.2",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.9"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "files": [
+    "/bin",
+    "/dist",
+    "/npm-shrinkwrap.json",
+    "/oclif.manifest.json"
+  ],
+  "homepage": "https://github.com/TylerGarlick/gerald",
+  "keywords": [
+    "oclif"
+  ],
+  "license": "MIT",
+  "main": "dist/index.js",
+  "oclif": {
+    "commands": "./dist/commands",
+    "bin": "gerald",
+    "plugins": [
+      "@oclif/plugin-help"
+    ]
+  },
+  "repository": "TylerGarlick/gerald",
+  "scripts": {
+    "postpack": "rm -f oclif.manifest.json",
+    "prepack": "rm -rf lib && tsc -b && oclif-dev manifest && oclif-dev readme",
+    "run:help": "./bin/run help",
+    "run:hello": "./bin/run hello --name=tyler",
+    "test": "echo NO TESTS",
+    "build": "pnpx tsc",
+    "version": "oclif-dev readme && git add README.md"
+  },
+  "types": "lib/index.d.ts",
+  "dependencies": {
+    "@oclif/command": "^1.8.0",
+    "@oclif/config": "^1.17.0",
+    "@oclif/errors": "^1.3.4",
+    "@oclif/plugin-help": "^3.2.2",
+    "tslib": "^1.14.1"
+  }
+}
